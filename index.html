@@ -20,9 +20,8 @@
       font-family: 'Courier New', monospace;
       background-color: #000;
       color: #f0f0f0;
-      scroll-behavior: smooth;
-      overflow-x: hidden;
       min-height: 100vh;
+      overflow-x: hidden;
     }
 
     header {
@@ -44,7 +43,6 @@
       position: absolute;
       left: 0;
       width: 100%;
-      overflow: hidden;
     }
 
     .glitch::before {
@@ -86,7 +84,7 @@
     }
 
     .typing {
-      margin-top: 20px;
+      margin: 20px auto 0;
       border-right: 2px solid white;
       white-space: nowrap;
       overflow: hidden;
@@ -95,8 +93,6 @@
       font-size: 1rem;
       text-align: center;
       max-width: 90%;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     @keyframes typing {
@@ -153,11 +149,9 @@
       color: #ccc;
     }
 
+    /* Sembunyikan audio */
     audio {
-      margin: 20px 0;
-      width: 90%;
-      max-width: 500px;
-      border-radius: 8px;
+      display: none;
     }
 
     footer {
@@ -168,22 +162,10 @@
     }
 
     @media (max-width: 600px) {
-      .glitch {
-        font-size: 1.6rem;
-      }
-
-      .typing {
-        font-size: 0.9rem;
-      }
-
-      .crew {
-        font-size: 0.85rem;
-      }
-
-      .contact-btn {
-        padding: 8px 15px;
-        font-size: 0.9rem;
-      }
+      .glitch { font-size: 1.6rem; }
+      .typing { font-size: 0.9rem; }
+      .crew { font-size: 0.85rem; }
+      .contact-btn { padding: 8px 15px; font-size: 0.9rem; }
     }
   </style>
 </head>
@@ -191,16 +173,17 @@
   <header>
     <div class="glitch" data-text="HACKED BY MR.M05T3R">HACKED BY MR.M05T3R</div>
     <div class="subtitle">FOUNDER <span style="color:red">NEWBIE CYBER SECURITY</span></div>
-    <div class="typing">
-      Selamat Website Anda Kami Retas. </div>
+    <div class="typing">Selamat Website Anda Kami Retas.</div>
     <img class="logo" src="logo-ncs.jpg" alt="Logo NCS" />
+
     <div class="info-box">
       <div><strong>IP Anda:</strong> <span id="ip-address">Memuat...</span></div>
       <div><strong>Jam:</strong> <span id="clock">00:00:00</span></div>
       <div><strong>Perangkat:</strong> <span id="device">Mendeteksi...</span></div>
     </div>
+
     <a href="javascript:void(0)" class="contact-btn" onclick="confirmEmail()">CONTACT ME - EMAIL ADMIN</a>
-    <audio id="audio" src="https://github.com/defacemoster/audio/raw/refs/heads/main/Karera" preload="auto" controls></audio>
+    <audio id="audio" src="https://github.com/defacemoster/audio/raw/refs/heads/main/Karera" preload="auto"></audio>
   </header>
 
   <section class="crew">
@@ -216,7 +199,9 @@
   <script>
     function playAudio() {
       const audio = document.getElementById('audio');
-      if (audio.paused) audio.play();
+      if (audio.paused) {
+        audio.play().catch(() => {}); // Bypass autoplay policy
+      }
     }
 
     function confirmEmail() {
@@ -235,7 +220,7 @@
     setInterval(updateClock, 1000);
     updateClock();
 
-    // IP Address fetch
+    // IP Address
     fetch('https://api.ipify.org?format=json')
       .then(res => res.json())
       .then(data => {
@@ -245,7 +230,7 @@
         document.getElementById("ip-address").textContent = "Tidak tersedia";
       });
 
-    // Device type
+    // Deteksi perangkat
     const userAgent = navigator.userAgent.toLowerCase();
     const isMobile = /android|iphone|ipad|mobile/.test(userAgent);
     document.getElementById("device").textContent = isMobile ? "Smartphone" : "Komputer / Laptop";
