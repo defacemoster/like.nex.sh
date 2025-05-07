@@ -2,15 +2,11 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="NEWBIE CYBER SECURITY OFFICIAL DEFACE - HACKED BY MR.M05T3R" />
-  <meta name="keywords" content="deface, hacked, MR.M05T3R, NCS, Newbie Cyber Security" />
+  <meta name="description" content="Official Deface by MR.M05T3R - NEWBIE CYBER SECURITY" />
   <meta name="author" content="MR.M05T3R" />
-  <meta name="theme-color" content="#000000" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src *; media-src *; script-src 'self' https://api.ipify.org;">
-  <link rel="shortcut icon" href="logo-ncs.jpg" />
   <title>HACKED BY MR.M05T3R</title>
+  <link rel="icon" href="logo-ncs.jpg" />
   <style>
     * {
       margin: 0;
@@ -18,114 +14,97 @@
       box-sizing: border-box;
     }
 
-    html, body {
-      font-family: 'Courier New', Courier, monospace;
-      background-color: #000;
-      color: #f0f0f0;
-      min-height: 100vh;
+    body {
+      font-family: 'Courier New', monospace;
+      background: #000;
+      color: #fff;
+      text-align: center;
       overflow-x: hidden;
+      min-height: 100vh;
       position: relative;
     }
 
-    /* Background Cyber Grid */
     body::before {
       content: "";
       position: fixed;
-      top: 0;
-      left: 0;
       width: 100%;
       height: 100%;
       background: repeating-linear-gradient(
         0deg,
-        rgba(255, 0, 0, 0.05),
-        rgba(255, 0, 0, 0.05) 1px,
+        rgba(255, 0, 0, 0.04),
+        rgba(255, 0, 0, 0.04) 1px,
         transparent 1px,
         transparent 2px
       );
       z-index: 0;
-      pointer-events: none;
     }
 
-    header {
-      text-align: center;
-      padding: 30px 20px;
+    header, .crew, footer {
       position: relative;
       z-index: 1;
+      padding: 20px;
     }
 
     .glitch {
       font-size: 2.5rem;
       font-weight: bold;
       position: relative;
-      animation: glitch 1.2s infinite;
       color: white;
+      animation: glitch 1.5s infinite;
     }
 
     .glitch::before,
     .glitch::after {
       content: attr(data-text);
       position: absolute;
-      left: 0;
       width: 100%;
+      left: 0;
     }
 
     .glitch::before {
-      animation: glitchTop 1.2s infinite;
       color: red;
       top: -2px;
+      animation: glitchTop 1.5s infinite;
     }
 
     .glitch::after {
-      animation: glitchBottom 1.2s infinite;
       color: cyan;
       top: 2px;
+      animation: glitchBottom 1.5s infinite;
     }
 
     @keyframes glitch {
       0%, 100% { transform: none; }
-      20% { transform: translate(-2px, 1px); }
-      40% { transform: translate(-1px, -2px); }
-      60% { transform: translate(1px, 1px); }
-      80% { transform: translate(2px, -1px); }
+      50% { transform: translate(2px, -2px); }
     }
 
     @keyframes glitchTop {
       0% { clip-path: inset(0 0 90% 0); }
-      50% { clip-path: inset(10% 0 80% 0); }
+      50% { clip-path: inset(30% 0 30% 0); }
       100% { clip-path: inset(0 0 90% 0); }
     }
 
     @keyframes glitchBottom {
       0% { clip-path: inset(90% 0 0 0); }
-      50% { clip-path: inset(80% 0 10% 0); }
+      50% { clip-path: inset(40% 0 20% 0); }
       100% { clip-path: inset(90% 0 0 0); }
     }
 
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn 2s ease forwards;
-    }
-
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-
     .subtitle {
-      margin-top: 10px;
       font-size: 1.2rem;
-      color: #ff0033;
+      margin-top: 10px;
+      color: red;
     }
 
     .typing {
-      margin: 20px auto 0;
-      border-right: 2px solid white;
+      font-size: 1rem;
+      color: #ccc;
+      margin: 20px auto;
+      width: fit-content;
       white-space: nowrap;
       overflow: hidden;
-      width: 0;
-      animation: typing 6s steps(80, end) forwards, blink 0.7s step-end infinite;
-      font-size: 1rem;
-      text-align: center;
-      max-width: 90%;
+      border-right: 2px solid white;
+      animation: typing 4s steps(50) forwards, blink 0.8s step-end infinite;
     }
 
     @keyframes typing {
@@ -138,25 +117,34 @@
     }
 
     .logo {
-      max-width: 300px;
-      width: 80%;
+      width: 200px;
       margin: 30px auto;
-      display: block;
-      border-radius: 12px;
-      border: 2px solid #444;
+      border-radius: 10px;
+      border: 2px solid red;
+    }
+
+    .info-box {
+      background: #111;
+      border: 1px solid #444;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 20px auto;
+      max-width: 400px;
+      font-size: 0.9rem;
+      color: #0ff;
     }
 
     .contact-btn {
       display: inline-block;
       margin: 20px 0;
       padding: 10px 20px;
-      color: white;
-      background: #111;
       border: 2px solid red;
-      border-radius: 8px;
+      background: #000;
+      color: white;
       text-decoration: none;
       font-weight: bold;
-      transition: background 0.3s ease;
+      border-radius: 6px;
+      transition: 0.3s;
     }
 
     .contact-btn:hover {
@@ -164,34 +152,13 @@
       color: #000;
     }
 
-    .info-box {
-      margin: 20px auto;
-      background: #111;
-      border: 1px solid #333;
-      padding: 15px;
-      border-radius: 10px;
-      max-width: 500px;
-      font-size: 0.9rem;
-      color: #0ff;
-    }
-
     .crew {
-      padding: 20px;
-      font-size: 0.95rem;
-      line-height: 1.6;
+      font-size: 0.9rem;
       color: #ccc;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    audio {
-      display: none;
+      line-height: 1.6;
     }
 
     footer {
-      text-align: center;
-      padding: 15px;
       font-size: 0.8rem;
       color: #666;
     }
@@ -199,70 +166,62 @@
     @media (max-width: 600px) {
       .glitch { font-size: 1.6rem; }
       .typing { font-size: 0.9rem; }
-      .crew { font-size: 0.85rem; }
-      .contact-btn { padding: 8px 15px; font-size: 0.9rem; }
     }
   </style>
 </head>
 <body onclick="playAudio()">
   <header>
-    <div class="glitch fade-in" data-text="HACKED BY MR.M05T3R">HACKED BY MR.M05T3R</div>
-    <div class="subtitle fade-in">FOUNDER <span style="color:red">NEWBIE CYBER SECURITY</span></div>
-    <div class="typing">Selamat Website Anda Kami Retas.</div>
-    <img class="logo fade-in" src="logo-ncs.jpg" alt="Logo NCS" />
+    <div class="glitch" data-text="HACKED BY MR.M05T3R">HACKED BY MR.M05T3R</div>
+    <div class="subtitle">FOUNDER - NEWBIE CYBER SECURITY</div>
+    <div class="typing">Selamat, website anda telah diretas.</div>
+    <img src="logo-ncs.jpg" alt="NCS Logo" class="logo" />
 
-    <div class="info-box fade-in">
-      <div><strong>IP Anda:</strong> <span id="ip-address">Memuat...</span></div>
-      <div><strong>Jam:</strong> <span id="clock">00:00:00</span></div>
+    <div class="info-box">
+      <div><strong>IP Anda:</strong> <span id="ip">Memuat...</span></div>
+      <div><strong>Waktu:</strong> <span id="clock">--:--:--</span></div>
       <div><strong>Perangkat:</strong> <span id="device">Mendeteksi...</span></div>
     </div>
 
-    <a href="mailto:offcncs@gmail.com?subject=Recover%20My%20Website&body=Hi%20NCS%20Team%2C%20please%20assist%20me%20to%20restore%20my%20site." class="contact-btn fade-in">
-      CONTACT NCS ADMIN
-    </a>
+    <a href="mailto:offcncs@gmail.com" class="contact-btn">Contact Admin NCS</a>
     <audio id="audio" src="https://github.com/defacemoster/audio/raw/refs/heads/main/Karera" preload="auto"></audio>
   </header>
 
-  <section class="crew fade-in">
-    <strong>SUPPORT:</strong><br>
-    MR.M05T3R - SUMOONID - L0N3C1PH3R - GHOSTCLONET77 - FAKEWORLD - INDRA XPLOIT - N0B1T4 - ABAH LASKAR - ALL MEMBER NEWBIE CYBER SECURITY<br>
-    DORAEMON CYBER TEAM - JAVA CYBER ARMY - GARUDA TEAM DDOS - FIGHTER BAR BAR - KELUARGA BESAR CYBER ISLAM INDONESIA - THE DARK UNIT CYBER - NOVGREY - SURABAYAXPLOIT
+  <section class="crew">
+    <b>SUPPORT:</b><br>
+    MR.M05T3R - SUMOONID - L0N3C1PH3R - GHOSTCLONET77 - FAKEWORLD - INDRA XPLOIT - N0B1T4 - ABAH LASKAR<br>
+    DORAEMON CYBER TEAM - JAVA CYBER ARMY - GARUDA TEAM DDOS - KELUARGA BESAR CYBER ISLAM INDONESIA - SURABAYAXPLOIT - THE DARK UNIT CYBER
   </section>
 
-  <footer class="fade-in">
-    &copy; 2025 MR.M05T3R - All rights reserved.
+  <footer>
+    &copy; 2025 MR.M05T3R - NEWBIE CYBER SECURITY
   </footer>
 
   <script>
     function playAudio() {
-      const audio = document.getElementById('audio');
-      if (audio.paused) {
-        audio.play().catch(() => {});
-      }
+      const audio = document.getElementById("audio");
+      audio.play().catch(() => {});
     }
 
     function updateClock() {
       const now = new Date();
-      const h = String(now.getHours()).padStart(2, '0');
-      const m = String(now.getMinutes()).padStart(2, '0');
-      const s = String(now.getSeconds()).padStart(2, '0');
-      document.getElementById("clock").textContent = `${h}:${m}:${s}`;
+      const time = now.toLocaleTimeString();
+      document.getElementById("clock").textContent = time;
     }
     setInterval(updateClock, 1000);
     updateClock();
 
-    fetch('https://api.ipify.org?format=json')
+    fetch("https://api.ipify.org?format=json")
       .then(res => res.json())
       .then(data => {
-        document.getElementById("ip-address").textContent = data.ip;
+        document.getElementById("ip").textContent = data.ip;
       })
       .catch(() => {
-        document.getElementById("ip-address").textContent = "Tidak tersedia";
+        document.getElementById("ip").textContent = "Tidak Terdeteksi";
       });
 
-    const userAgent = navigator.userAgent.toLowerCase();
-    const isMobile = /android|iphone|ipad|mobile/.test(userAgent);
-    document.getElementById("device").textContent = isMobile ? "Smartphone" : "Komputer / Laptop";
+    const ua = navigator.userAgent.toLowerCase();
+    const isMobile = /android|iphone|ipad|mobile/.test(ua);
+    document.getElementById("device").textContent = isMobile ? "Smartphone" : "Komputer/Laptop";
   </script>
 </body>
 </html>
