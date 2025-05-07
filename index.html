@@ -4,11 +4,13 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="NEWBIE CYBER SECURITY" />
+  <meta name="description" content="NEWBIE CYBER SECURITY OFFICIAL DEFACE - HACKED BY MR.M05T3R" />
+  <meta name="keywords" content="deface, hacked, MR.M05T3R, NCS, Newbie Cyber Security" />
+  <meta name="author" content="MR.M05T3R" />
   <meta name="theme-color" content="#000000" />
-  <meta name="author" content="INDRA XPLOIT" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src *; media-src *; script-src 'self' https://api.ipify.org;">
   <link rel="shortcut icon" href="logo-ncs.jpg" />
-  <title>HACKED BY INDRA XPLOIT</title>
+  <title>HACKED BY MR.M05T3R</title>
   <style>
     * {
       margin: 0;
@@ -17,16 +19,38 @@
     }
 
     html, body {
-      font-family: 'Courier New', monospace;
+      font-family: 'Courier New', Courier, monospace;
       background-color: #000;
       color: #f0f0f0;
       min-height: 100vh;
       overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Background Cyber Grid */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(255, 0, 0, 0.05),
+        rgba(255, 0, 0, 0.05) 1px,
+        transparent 1px,
+        transparent 2px
+      );
+      z-index: 0;
+      pointer-events: none;
     }
 
     header {
       text-align: center;
       padding: 30px 20px;
+      position: relative;
+      z-index: 1;
     }
 
     .glitch {
@@ -75,6 +99,15 @@
       0% { clip-path: inset(90% 0 0 0); }
       50% { clip-path: inset(80% 0 10% 0); }
       100% { clip-path: inset(90% 0 0 0); }
+    }
+
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
     }
 
     .subtitle {
@@ -147,9 +180,11 @@
       font-size: 0.95rem;
       line-height: 1.6;
       color: #ccc;
+      text-align: center;
+      position: relative;
+      z-index: 1;
     }
 
-    /* Sembunyikan audio */
     audio {
       display: none;
     }
@@ -171,28 +206,30 @@
 </head>
 <body onclick="playAudio()">
   <header>
-    <div class="glitch" data-text="HACKED BY INDRA XPLOIT">HACKED BY INDRA XPLOIT</div>
-    <div class="subtitle">STAFF <span style="color:red">NEWBIE CYBER SECURITY</span></div>
+    <div class="glitch fade-in" data-text="HACKED BY MR.M05T3R">HACKED BY MR.M05T3R</div>
+    <div class="subtitle fade-in">FOUNDER <span style="color:red">NEWBIE CYBER SECURITY</span></div>
     <div class="typing">Selamat Website Anda Kami Retas.</div>
-    <img class="logo" src="logo-ncs.jpg" alt="Logo NCS" />
+    <img class="logo fade-in" src="logo-ncs.jpg" alt="Logo NCS" />
 
-    <div class="info-box">
+    <div class="info-box fade-in">
       <div><strong>IP Anda:</strong> <span id="ip-address">Memuat...</span></div>
       <div><strong>Jam:</strong> <span id="clock">00:00:00</span></div>
       <div><strong>Perangkat:</strong> <span id="device">Mendeteksi...</span></div>
     </div>
 
-    <a href="javascript:void(0)" class="contact-btn" onclick="confirmEmail()">CONTACT ME - EMAIL ADMIN</a>
+    <a href="mailto:offcncs@gmail.com?subject=Recover%20My%20Website&body=Hi%20NCS%20Team%2C%20please%20assist%20me%20to%20restore%20my%20site." class="contact-btn fade-in">
+      CONTACT NCS ADMIN
+    </a>
     <audio id="audio" src="https://github.com/defacemoster/audio/raw/refs/heads/main/Karera" preload="auto"></audio>
   </header>
 
-  <section class="crew">
+  <section class="crew fade-in">
     <strong>SUPPORT:</strong><br>
     MR.M05T3R - SUMOONID - L0N3C1PH3R - GHOSTCLONET77 - FAKEWORLD - INDRA XPLOIT - N0B1T4 - ABAH LASKAR - ALL MEMBER NEWBIE CYBER SECURITY<br>
     DORAEMON CYBER TEAM - JAVA CYBER ARMY - GARUDA TEAM DDOS - FIGHTER BAR BAR - KELUARGA BESAR CYBER ISLAM INDONESIA - THE DARK UNIT CYBER - NOVGREY - SURABAYAXPLOIT
   </section>
 
-  <footer>
+  <footer class="fade-in">
     &copy; 2025 MR.M05T3R - All rights reserved.
   </footer>
 
@@ -200,16 +237,10 @@
     function playAudio() {
       const audio = document.getElementById('audio');
       if (audio.paused) {
-        audio.play().catch(() => {}); // Bypass autoplay policy
+        audio.play().catch(() => {});
       }
     }
 
-    function confirmEmail() {
-      alert("Selamat datang di situs kami. Website Anda telah berhasil kami retas dan tampilannya telah kami ubah.");
-      window.location.href = "mailto:offcncs@gmail.com?subject=Website%20Recovery%20Request&body=Greetings%20NCS%20Team%2C%20please%20help%20restore%20our%20site.";
-    }
-
-    // Jam real-time
     function updateClock() {
       const now = new Date();
       const h = String(now.getHours()).padStart(2, '0');
@@ -220,7 +251,6 @@
     setInterval(updateClock, 1000);
     updateClock();
 
-    // IP Address
     fetch('https://api.ipify.org?format=json')
       .then(res => res.json())
       .then(data => {
@@ -230,7 +260,6 @@
         document.getElementById("ip-address").textContent = "Tidak tersedia";
       });
 
-    // Deteksi perangkat
     const userAgent = navigator.userAgent.toLowerCase();
     const isMobile = /android|iphone|ipad|mobile/.test(userAgent);
     document.getElementById("device").textContent = isMobile ? "Smartphone" : "Komputer / Laptop";
